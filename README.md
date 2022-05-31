@@ -1,2 +1,2 @@
 # bechirPORTFOLIO
-Une maquette BS5 d'un Portfolio
+Une maquette BOOTSTRAP 5 d'un Port-folio
