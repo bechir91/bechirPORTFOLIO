@@ -1,35 +1,32 @@
-/* mes styles */
-
+/* Styles pour la page portfolio /// pisola */
 
 body {
     margin: 0;
     padding: 0;
-    /* hauteur de 100 view height la hauteur de l'écran 100 % de la hauteur de l'écran */
+    /* 100 vh view height la hauteur de l'écran 100 % de l'écran  */
     height: 100vh;
-    }
-    
-    .imgProfilAcc {
-        width: 150px;
-    }
-    
-    /* après le portfolio pour éviter le souci de la partie haute  */
-    
-    #accueil {
-        min-height: 750px;
-    }
-    
-    /* après la section about faire la coleur de la nav quand on scrole  */
-    /* cette classe boostrap n'a pas de propriété css de style donc on peut se permettre de la modifier sinon on le fait pas trop  */
-    .navbar {
-        border-bottom: 1px solid #000;
-    }
-    
-    .imgServices {
-        width: 120px;
-        height: 100px;
-    }
-    
-    .titreContact {
-        padding: 40px 0 50px 0;
-        margin-top: 100px;
-    }
+}
+
+#accueil {
+    min-height: 750px;
+}
+
+/* l'avatar dans la partie accueil */
+.imgProfil {
+    width: 150px;
+}
+
+/* taille des images dans la section services  */
+.imgServices {
+    width: 300px;
+    height: 300px;
+}
+
+.titreContact {
+    padding: 50px 0;
+    margin-top: 100px;
+}
+
+footer {
+    padding: 40px 0 10px 0;
+}
