@@ -1,115 +1,492 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bechir PORTFOLIO</title>
-    <!-- BSS CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
 
-    <!-- Mes styles -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- navigation principale -->
-    <!-- fixed-top pour fixer la navbar en haut de page -->
-    <!--navbar-expand-lg pour que la navbar s'étend sur toute la largeur de l'écran large -->
-    <nav class="navbar fixed-top navbar-expand-lg bg-light justify-content-center">
-        <div class="container-fluid">
-            <!-- collapse effondrement masquer ou afficher le boutton // aria-controls accessibilité aria-expanded="false" on démarre avec le menu qui n'est pas étendu on démarre à false  -->
-            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
-                data-bs-target="#ma-nav" aria-controls="ma-nav" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <!-- nav-toggler-icon un svg qui fait le boutton toggler =bascule -->
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- collapse navbar-collapse pour la faire apparaître ou non //  attention c'est le même id que dans data-target -->
-            <div class="collapse navbar-collapse" id="ma-nav">
-            <!-- ul>li*5>a -->
-            <!-- navbar-nav pour la ul // nav-item pour les li // nav-link pour les a-->
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a href="#accueil" class="nav-link">Accueil</a></li>
-                    <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                    <li class="nav-item"><a href="#a-propos" class="nav-link">A propos</a></li>
-                    <li class="nav-item"><a href="#mes-services" class="nav-link">Mes services</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">Contactez-moi</a></li>
-                </ul>
-            </div>
-            <!-- fin de div pour la ul -->
-        </div>
-        <!-- fin container-fluid -->
+<!-- =================================== -->
+<!-- navbar -->
+<!-- =================================== -->
+<!-- 1 fabrication de la navbar avec boostrap, à la main -->
+<!-- navbar-expand-lg pour faire apparaître la nav pour un écran lg  -->
+<!-- 2 nav.navbar.fixed-top.navbar-expand-lg.navbar-light.bg-light -->
+<!-- 3 button.navbar-toggler.ml-auto -->
 
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <!-- ml-auto pour mettre bouton à droite  collapse efondrement du bouton /// aria-controls accessibilité aria-expanded="false" on démarre avec le menu qui n'est pas étendu on démarre à false /// navbar-toggler-icon on va chercher un svg faire inspecter pour voir le svg-->
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- collapse navbar-collapse pour la faire apparaître ou non // navbarToggler attention c'est le même id que dans data-target -->
+        <div class="collapse navbar-collapse" id="navbarToggler">   
+        <!-- tout est flex à l'intérieur, tout est au centre sur l'axe des x donc de gauche à droite horizontal et aligné au centre -->
+        <ul class="navbar-nav w-100 d-flex justify-content-center align-items-center">
+            <li class="nav-item">
+                <a href="#accueil" class="nav-link text-dark">Accueil</a>
+            </li>
+            <li class="nav-item">
+                <a href="#portfolio" class="nav-link text-dark">Portfolio</a>
+            </li>
+            <li class="nav-item">
+                <a href="#about" class="nav-link text-dark">À propos</a>
+            </li>
+            <li class="nav-item">
+                <a href="#services" class="nav-link text-dark">Services</a>
+            </li>
+            <li class="nav-item">
+                <a href="#contact" class="nav-link text-dark">Contact</a>
+            </li>
+
+        </ul>
+        </div>
     </nav>
 
-    <!-- En-tête -->
-    <header id="accueil" class="bg-dark text-white">
-        <img src="img/man.svg" alt="Bechir DALY - Developpeur 10MentionWebFormation">
-        <h1>Salut, Bienvenue sur mon PORTFOLIO</h1>
-        <p>Je suis développeur à 10 Mention Web</p>
-    </header>
-    <!-- section 1 Portfolio -->
-    <section id="portfolio">
-        <h2>Mon portfolio</h2>
-        <!-- react twitch -->
-        <img src="img/ReactTwitch.png" alt="Bechir DALY react twitch">
+    <!-- =================================== -->
+    <!-- Accueil -->
+    <!-- =================================== -->
+    <!-- div.text-white.bg-dark.text-center.d-flex.flex-column.align-items-center.w-100.h-75.p-3.mx-auto#accueil -->
+    <div class="text-white bg-dark text-center d-flex flex-column align-items-center w-100 h-75 p-3 mx-auto" id="accueil">
+        <!-- mt-auto centrer verticalement 2 élément mt-auto sous flex bonx en mode colonne donc ils vont se partager l'espace entre eux en hauteur ils sont parfaitement éloigné // faire teste en le mettant après-->
+        <div class="mt-auto">
+            <!-- la class pour l'image nous permettra de donner une width à notre image  -->
+            <img src="img/man.svg" alt="avatar Patrick Isola Colombbus" class="imgProfilAcc">
+            <h1>Salut, moi c'est Bechir DALY</h1>
+            <p class="lead">Je suis encadrant technique & formateur à Colombbus</p>
+            <p class="lead">
+                <a href="#about" class="btn btn-sm btn-secondary">En savoir plus</a>
+            </p>
+        </div>
 
-        <!-- animation -->
-        <img src="img/animation.jpg" alt="Bechir DALY animation">
+        <div class="mt-auto">
+            <!-- Par des sentiers ardus jusqu'aux étoiles -->
+            <p class="lead">Per aspera ad astra.</p>
+        </div>
 
-        <!-- meteo app -->
-        <img src="img/MeteoApp.png" alt="Bechir DALY meteo app">
+    </div>
+    <!-- fin div accueil -->
 
-        <!-- site menu -->
-        <img src="img/SiteMenu.png" alt="Bechir DALY site menu">
+    <!-- =================================== -->
+    <!-- portfolio -->
+    <!-- =================================== -->
+    <!-- py-5 en haut et en bas un padding de 5 -->
+    <div class="py-5" id="portfolio">
+        <h2 class="text-center mb-5 text-uppercase">Portfolio</h2>
 
-        <!-- site pour particulier -->
-        <img src="img/SiteResPic.jpg" alt="Bechir DALY site pour particulier">
+        <div class="container">
+            <div class="row">
 
-        <!-- visualisation de données -->
-        <img src="img/Visu.jpg" alt="Bechir DALY visualisation de données">
+                <!-- card 1  -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="img/ReactTwitch.png" alt="React Patrick Isola Colombbus" class="card-img-top">
+                        <div class="card-body">
+                            <h4>Cloner Twitch avec React</h4>
+                            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa obcaecati rerum ratione ullam inventore adipisci?</p>
+                            <div class="btn-group">
+                                <a href="#" target="_blank" class="text-dark">
+                                    <button class="btn btn-sm btn-outline-secondary">
+                                        Code source 
+                                    </button>
+                                </a>
+                                <a href="#" target="_blank" class="text-dark">
+                                    <button class="btn btn-sm btn-outline-secondary ml-2">
+                                        Voir le projet 
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- fin card body  -->
+                    </div>
+                    <!-- fin card  -->
+                </div>
+                <!-- fin col -->
 
-        <!-- JS -->
-        <img src="img/js.jpg" alt="Bechir DALY JS">
+                <!-- card 2  -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="img/animation.jpg" alt="React Patrick Isola Colombbus" class="card-img-top">
+                        <div class="card-body">
+                            <h4>Ux Design</h4>
+                            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa obcaecati rerum ratione ullam inventore adipisci?</p>
+                            <div class="btn-group">
+                                <a href="#" target="_blank" class="text-dark">
+                                    <button class="btn btn-sm btn-outline-secondary">
+                                        Code source 
+                                    </button>
+                                </a>
+                                <a href="#" target="_blank" class="text-dark">
+                                    <button class="btn btn-sm btn-outline-secondary ml-2">
+                                        Voir le projet 
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- fin card body  -->
+                    </div>
+                    <!-- fin card  -->
+                </div>
+                <!-- fin col -->
 
-        <!-- GRID -->
-        <img src="img/Grid.jpg" alt="Bechir DALY Grid">
+                <!-- card 3  -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="img/MeteoApp.png" alt="React Patrick Isola Colombbus" class="card-img-top">
+                        <div class="card-body">
+                            <h4>Application Météo</h4>
+                            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa obcaecati rerum ratione ullam inventore adipisci?</p>
+                            <div class="btn-group">
+                                <a href="#" target="_blank" class="text-dark">
+                                    <button class="btn btn-sm btn-outline-secondary">
+                                        Code source 
+                                    </button>
+                                </a>
+                                <a href="#" target="_blank" class="text-dark">
+                                    <button class="btn btn-sm btn-outline-secondary ml-2">
+                                        Voir le projet 
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- fin card body  -->
+                    </div>
+                    <!-- fin card  -->
+                </div>
+                <!-- fin col -->
 
-        <!-- bulma -->
-        <img src="img/Bulma.jpg" alt="Bechir DALY Bulma">
+                <!-- card 4  -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="img/SiteMenu.png" alt="React Patrick Isola Colombbus" class="card-img-top">
+                        <div class="card-body">
+                            <h4>Design Responsive</h4>
+                            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa obcaecati rerum ratione ullam inventore adipisci?</p>
+                            <div class="btn-group">
+                                <a href="#" target="_blank" class="text-dark">
+                                    <button class="btn btn-sm btn-outline-secondary">
+                                        Code source 
+                                    </button>
+                                </a>
+                                <a href="#" target="_blank" class="text-dark">
+                                    <button class="btn btn-sm btn-outline-secondary ml-2">
+                                        Voir le projet 
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- fin card body  -->
+                    </div>
+                    <!-- fin card  -->
+                </div>
+                <!-- fin col -->
+
+                <!-- card 5  -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="img/SiteResPic.jpg" alt="React Patrick Isola Colombbus" class="card-img-top">
+                        <div class="card-body">
+                            <h4>Site pour particulier</h4>
+                            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa obcaecati rerum ratione ullam inventore adipisci?</p>
+                            <div class="btn-group">
+                                <a href="#" target="_blank" class="text-dark">
+                                    <button class="btn btn-sm btn-outline-secondary">
+                                        Code source 
+                                    </button>
+                                </a>
+                                <a href="#" target="_blank" class="text-dark">
+                                    <button class="btn btn-sm btn-outline-secondary ml-2">
+                                        Voir le projet 
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- fin card body  -->
+                    </div>
+                    <!-- fin card  -->
+                </div>
+                <!-- fin col -->
+
+                <!-- card 6  -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="img/Visu.jpg" alt="React Patrick Isola Colombbus" class="card-img-top">
+                        <div class="card-body">
+                            <h4>Visualisation de données</h4>
+                            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa obcaecati rerum ratione ullam inventore adipisci?</p>
+                            <div class="btn-group">
+                                <a href="#" target="_blank" class="text-dark">
+                                    <button class="btn btn-sm btn-outline-secondary">
+                                        Code source 
+                                    </button>
+                                </a>
+                                <a href="#" target="_blank" class="text-dark">
+                                    <button class="btn btn-sm btn-outline-secondary ml-2">
+                                        Voir le projet 
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- fin card body  -->
+                    </div>
+                    <!-- fin card  -->
+                </div>
+                <!-- fin col -->
+
+                <!-- card 7  -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="img/js.jpg" alt="React Patrick Isola Colombbus" class="card-img-top">
+                        <div class="card-body">
+                            <h4>Java Script</h4>
+                            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa obcaecati rerum ratione ullam inventore adipisci?</p>
+                            <div class="btn-group">
+                                <a href="#" target="_blank" class="text-dark">
+                                    <button class="btn btn-sm btn-outline-secondary">
+                                        Code source 
+                                    </button>
+                                </a>
+                                <a href="#" target="_blank" class="text-dark">
+                                    <button class="btn btn-sm btn-outline-secondary ml-2">
+                                        Voir le projet 
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- fin card body  -->
+                    </div>
+                    <!-- fin card  -->
+                </div>
+                <!-- fin col -->
+
+                <!-- card 8  -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="img/grid.jpg" alt="React Patrick Isola Colombbus" class="card-img-top">
+                        <div class="card-body">
+                            <h4>Grille CSS</h4>
+                            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa obcaecati rerum ratione ullam inventore adipisci?</p>
+                            <div class="btn-group">
+                                <a href="#" target="_blank" class="text-dark">
+                                    <button class="btn btn-sm btn-outline-secondary">
+                                        Code source 
+                                    </button>
+                                </a>
+                                <a href="#" target="_blank" class="text-dark">
+                                    <button class="btn btn-sm btn-outline-secondary ml-2">
+                                        Voir le projet 
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- fin card body  -->
+                    </div>
+                    <!-- fin card  -->
+                </div>
+                <!-- fin col -->
+
+                <!-- card 9  -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="img/bulma.jpg" alt="React Patrick Isola Colombbus" class="card-img-top">
+                        <div class="card-body">
+                            <h4>Framework Bulm</h4>
+                            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa obcaecati rerum ratione ullam inventore adipisci?</p>
+                            <div class="btn-group">
+                                <a href="#" target="_blank" class="text-dark">
+                                    <button class="btn btn-sm btn-outline-secondary">
+                                        Code source 
+                                    </button>
+                                </a>
+                                <a href="#" target="_blank" class="text-dark">
+                                    <button class="btn btn-sm btn-outline-secondary ml-2">
+                                        Voir le projet 
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- fin card body  -->
+                    </div>
+                    <!-- fin card  -->
+                </div>
+                <!-- fin col -->
+            </div>
+            <!-- fin row -->
+
+        </div>
+        <!-- fin container  -->
+    </div>
+    <!-- fin div portfolio  -->
+
+<!-- =================================== -->
+<!-- A propos -->
+<!-- =================================== -->
+
+<section class="bg-dark text-white mb-0" id="about">
+    <div class="container py-5">
+
+        <h2 class="text-center text-uppercase text-white pb-3">À propos</h2>
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-4">
+                <p class="lead">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam consequatur maiores architecto atque consequuntur doloribus voluptates molestias sunt, nobis voluptatem, accusantium natus perferendis repellat quia porro. Porro amet reprehenderit eos, laudantium soluta eaque. Doloremque, aliquid!
+                </p>
+            </div>
+            <!-- fin col  -->
+            <div class="col-lg-4">
+                <p class="lead">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam consequatur maiores architecto atque consequuntur doloribus voluptates molestias sunt, nobis voluptatem, accusantium natus perferendis repellat quia porro. Porro amet reprehenderit eos, laudantium soluta eaque. Doloremque, aliquid!
+                </p>
+            </div>
+            <!-- fin col  -->
+
+            
+
+        </div>
+        <!-- fin row  -->
+        
+            <div class="text-center mt-4">
+                <a href="#contact" class="btn btn-xl btn-outline-light">
+                    Contactez-moi
+                </a>
+            </div>
+    </div>
+    <!-- fin container  -->
+</section>
+<!-- fin section  -->
+
+<!-- ========================================= -->
+<!-- Services -->
+<!-- ========================================= -->
+
+<!-- my-5 en haut et en bas  -->
+
+<h2 class="text-center my-5 text-uppercase" id="services">Mes services</h2>
+
+<div class="container">
+    <!-- justify-content-center pour centre sur l'axe des y  -->
+    <div class="row d-flex justify-content-center">
+        <!-- col-lg-4.col-md-6.d-flex.flex-column.justify-content.align-items-center -->
+        <!-- on centre sur l'axe des x mais quand on passe en colonne on centre sur l'axe des y  -->
+        <!-- align-items-center pour centrer sur l'axe des x align = alignement horizontal  -->
+        <div class="col-lg-4 col-md-6 d-flex flex-column justify-content align-items-center">
+            <img src="img/vue.png" alt="Vue Patrick Isola Colombbus" class="imgServices">
+            <h2 class="text-center">Vue</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem sequi quia modi tempora soluta blanditiis quasi voluptate voluptas minus voluptates, ipsam nihil totam cupiditate praesentium mollitia! Ut iure alias, est facere saepe hic modi laboriosam.</p>
+            <a href="#" class="btn btn-secondary mb-4">Voir mes projets &raquo;</a>
+        </div>
+        <!-- fin col -->
+
+        <div class="col-lg-4 col-md-6 d-flex flex-column justify-content align-items-center">
+            <img src="img/angular-icon.svg" alt="Angular Patrick Isola Colombbus" class="imgServices">
+            <h2 class="text-center">Angular</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem sequi quia modi tempora soluta blanditiis quasi voluptate voluptas minus voluptates, ipsam nihil totam cupiditate praesentium mollitia! Ut iure alias, est facere saepe hic modi laboriosam.</p>
+            <a href="#" class="btn btn-secondary mb-4">Voir mes projets &raquo;</a>
+        </div>
+        <!-- fin col -->
+
+        <div class="col-lg-4 col-md-6 d-flex flex-column justify-content align-items-center">
+            <img src="img/React.png" alt="React Patrick Isola Colombbus" class="imgServices">
+            <h2 class="text-center">React</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem sequi quia modi tempora soluta blanditiis quasi voluptate voluptas minus voluptates, ipsam nihil totam cupiditate praesentium mollitia! Ut iure alias, est facere saepe hic modi laboriosam.</p>
+            <a href="#" class="btn btn-secondary mb-4">Voir mes projets &raquo;</a>
+        </div>
+        <!-- fin col -->
+    </div>
+    <!-- fin row  -->
+</div>
+<!-- fin container  -->
+
+<!-- ========================================= -->
+<!-- contact -->
+<!-- ========================================= -->
+
+<!-- section.bg-dark.text-white.mb-0#contact -->
+<section class="bg-dark text-white mb-0" id="contact">
+
+<div class="container">
+    <h2 class="titreContact text-center">Contactez-moi</h2>
+    <div class="row">
+        <div class="col-10 mx-auto">
+            <!-- role="form" > accessibilité  -->
+            <form action="" id="contact-form" role="form">
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="prenom">Prénom *</label>
+                            <input type="text" id="prenom" name="prenom" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="nom">Nom *</label>
+                            <input type="text" id="nom" name="nom" class="form-control" required>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- fin row 1 nom prénom-->
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- fin row 2 email-->
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="message">Votre message *</label>
+                            <textarea name="message" id="message" cols="10" rows="4" class="form-control" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mb-5">
+                        <input type="submit" class="btn btn-success" value="Envoyez">
+                    </div>
+                </div>
+                <!-- fin row 3 textarea et bouton-->
+            </form>
+        </div>
+        <!-- fin row -->
+    </div>
+    <!-- fin row -->
+
+</div>
+<!-- fin container -->
+
+</section>
+<!-- fin section  -->
+
+<!-- ========================================= -->
+<!-- Pied de page -->
+<!-- ========================================= -->
+
+<footer class="bg-dark text-white">
+    <p class="text-center m-0">
+        @ Tout droits réservés - Bechir DALY
+    </p>
+
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+<script src="app.js"></script>
 
 
-    </section>
-    <!-- fin de section portfolio -->
-    <!-- section 2 A propos -->
-    <section id="a-propos">
-        <h2>A propos</h2>
-
-    </section>
-    <!-- fin de section A propos -->
-    <!-- section 3 mes services -->
-    <section id="mes-services">
-        <h2>Mes services</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat ad perspiciatis modi iusto ducimus non beatae delectus iste itaque officia magni quod laudantium laborum distinctio possimus, sed debitis! Labore quos odio nesciunt. Necessitatibus, beatae eligendi quas omnis delectus itaque ducimus dignissimos tempora inventore distinctio culpa, modi deserunt natus harum, corporis laboriosam maiores aliquid voluptate autem minus! Eius repudiandae veniam quaerat quo perferendis, aspernatur nostrum beatae omnis accusantium libero quibusdam fugit, debitis fuga magnam labore quisquam quis sint, autem iure minus? Cumque fugiat omnis obcaecati possimus sunt, ad necessitatibus ratione. Aut, quod reprehenderit. Nesciunt, laborum? Dolores illum voluptatem libero aliquid architecto?</p>
-    </section>
-    <!-- fin de section mes services -->
-    <!-- section 4 contact -->
-    <section id="contact">
-        <h2>Contactez-moi</h2>
-    </section>
-    <!-- fin de section contact -->
-    <!-- footer -->
-    <footer>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta harum modi commodi, natus expedita qui debitis
-            cumque vero ut dignissimos quis odit ab. Perferendis quibusdam, facere deleniti eius alias fuga?</p>
-    </footer>
-    <!-- fin de footer -->
-    <!-- JS et POPPER de BS5 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-        crossorigin="anonymous"></script>
 </body>
-
 </html>
